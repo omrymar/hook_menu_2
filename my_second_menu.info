@@ -2,4 +2,3 @@ name = My second menu
 description = My second hook menu
 package = custom module
 core = 7.x
-files[] = my_second_menu.inc
