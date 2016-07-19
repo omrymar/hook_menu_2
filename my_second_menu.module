@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implements hook_my_menu_menu().
+ */
+
+function my_second_menu_my_menu_menu($route, $item)
+{
+  $subitems = array();
+  if ($route == 'admin/my_menu/history_of_badr') {
+    $subitems['loss'] = [
+      'title' => 'Loss number 2',
+      'description' => 'Loss number 2',
+      'page callback' => 'my_second_menu_history_of_badr',
+      'access callback' => TRUE,
+      'expanded' => TRUE,
+    ];
+  }
+  return $subitems;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+
+function my_second_menu_my_menu_menu_alter(&$subitems, $route, $item) {
+  if ($route == 'admin/my_menu/history_of_badr') {
+    $subitems['loss']['title'] = 'New loss 1';
+  }
+}
+
+function my_second_menu_history_of_badr() {
+  return t('This is a loss number 2:)))');
+}
+
+
+
+
+
+
+
+
